@@ -1,0 +1,35 @@
+
+describe("Assertions demo", ()=> {
+
+    it("Explicit assertions",()=>{
+    cy.visit("https://opensource-demo.orangehrmlive.com/web/index.php/auth/login")
+    cy.get(".oxd-input oxd-input--active").type("Admin")
+    cy.get(".oxd-input oxd-input--active").type("admin123")
+    cy.get("oxd-input oxd-input--active").click()    
+
+    let exptName="xyz"
+    cy.get(".oxd-userdropdown-tab").then( (x)=>{
+        
+        //BDD style we use expect assertion
+        letactName=x.text()                                    
+        expect(actName).to.equal(expName)
+        expect(actName).to.not.equal(expName)
+
+        //In TDD style we use assert
+        assert(actName).to.equal(actName,expName)
+        assert(actName).to.not.equal(actName,expName)
+
+
+
+
+
+    })
+        
+
+
+
+    })
+
+
+
+})
